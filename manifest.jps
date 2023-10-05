@@ -7,7 +7,7 @@ description:
   text: Node-RED development environment to wire services, devices and APIs into a single IoT network within a Cloud. Provides web-based editor with a wide range of nodes to connect and deploy flows.
   short: Node-RED development environment for building IoT networks in the Cloud.
 
-baseUrl: https://raw.githubusercontent.com/jelastic-jps/node-red/master/
+baseUrl: https://raw.githubusercontent.com/vlobzakov/node-red/master/
 
 categories:
 - apps/dev-and-admin-tools
@@ -15,7 +15,22 @@ categories:
 onBeforeInit: scripts/onBeforeInit.js
 
 nodes:
+- nodeType: nginx
+  cloudlets: 8
+  nodeGroup: bl
+  fixedCloudlets: 1
+- nodeType: dockerengine
+  count: 1
+  cloudlets: 10
+  fixedCloudlets: 1
+  displayName: ChromaDB
+  nodeGroup: vectordb
+- nodeType: mongodb-dockerized
+  count: 1
+  cloudlets: 10
+  fixedCloudlets: 1
 - cloudlets: 8
+  fixedCloudlets: 1
   displayName: Node-RED
   image: nodered/node-red
   nodeGroup: cp
@@ -24,6 +39,8 @@ nodes:
 globals:
   wsPort: 1880
   redirPort: 7654
+
+ssl: true
 
 onInstall:
 - script: /scripts/add-redirect.js

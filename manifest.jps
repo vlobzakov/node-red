@@ -24,12 +24,6 @@ nodes:
   cloudlets: 8
   nodeGroup: bl
   fixedCloudlets: 1
-- nodeType: dockerengine
-  count: 1
-  cloudlets: 24
-  fixedCloudlets: 1
-  displayName: ChromaDB
-  nodeGroup: vectordb
 - nodeType: mongodb-dockerized
   count: 1
   cloudlets: 10
@@ -42,6 +36,12 @@ nodes:
   nodeGroup: cp
   env:
     JELASTIC_EXPOSE: '7654'
+#- nodeType: dockerengine
+#  count: 1
+#  cloudlets: 24
+#  fixedCloudlets: 1
+#  displayName: ChromaDB
+#  nodeGroup: vectordb
 
 ssl: true
 

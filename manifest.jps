@@ -14,6 +14,8 @@ categories:
 
 globals:
   mongodb_password: ${fn.password}
+  wsPort: 1880
+  redirPort: 7654
 
 onBeforeInit: scripts/onBeforeInit.js
 
@@ -40,9 +42,6 @@ nodes:
   nodeGroup: cp
   env:
     JELASTIC_EXPOSE: '7654'
-globals:
-  wsPort: 1880
-  redirPort: 7654
 
 ssl: true
 
@@ -64,11 +63,11 @@ onInstall:
     nodeGroup: cp
 
 success: |
-   Start building your AI solutions just now - click Open in Browser for the dedicated web-based editor launch.
-   Node-red editor credentials:
-   username: **admin**
-   password: **ravabot2pwd**
-   Do not forget to change password after installation with command **node-red admin hash-pw** and **/data/settings.js** update
-   MongoDB credentials:
-   username: **admin**
-   password: **${globals.mongodb_password}**
+   Start building your AI solutions just now - click Open in Browser for the dedicated web-based editor launch.  
+   Node-red editor credentials:  
+   username: **admin**  
+   password: **ravabot2pwd**  
+   Do not forget to change password after installation with command **node-red admin hash-pw** and update **/data/settings.js**  
+   MongoDB credentials:  
+   username: **admin**  
+   password: **${globals.mongodb_password}**  

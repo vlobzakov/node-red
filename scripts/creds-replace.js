@@ -2,7 +2,7 @@
         type: "credentials",
         users: [{
             username: "admin",
-            password: "*********WtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",
+            password: "$2b$08$C8I.EZCHxPsJlaoOcZjKzupjNoN5cRSavs9H.T1by8iQVScu7f/cO",
             permissions: "*"
         }]
     },

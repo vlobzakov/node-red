@@ -74,4 +74,5 @@ success: |
    MongoDB credentials:  
    username: **admin**  
    password: **${globals.mongodb_password}**  
-   Vector database connection: **${nodes.vectordb.intIP}:8000**
+   Vector database connection: use separate ChromaDB node with port **8000**
+#   Vector database connection: **${nodes.vectordb.intIP}:8000**

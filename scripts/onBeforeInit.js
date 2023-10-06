@@ -14,10 +14,11 @@ for (var i = 0, n = q.length; i < n; i++) {
     }
 }
 
-resp = { result: 0, settings: {fields: ["type": "string","name":"nodered_password","caption": "Node-Red Password"]} };
+resp = { result: 0, settings: {fields: []} };
 
 if (endpoint_markup){
     resp.settings.fields.push(
+        {"type": "string", "name":"nodered_password", "caption": "Node-Red Password"},
         {"type": "displayfield", "cls": "warning", "height": 30, "hideLabel": true, "markup": endpoint_markup},
         {"type": "compositefield","height": 0,"hideLabel": true,"width": 0,"items": [{"height": 0,"type": "string","required": true}]}
     )

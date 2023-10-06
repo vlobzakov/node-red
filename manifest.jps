@@ -2,7 +2,7 @@ type: install
 version: 0.99
 id: node-red-dev
 name: Node-RED Dev
-logo: images/node-red-logo.png
+logo: images/ravatar-logo70x70.png
 description:
   text: AI focused application and development environment based on low-code Node-RED framework, CromaDB vector and MongoDB NoSQL databases. Provides web-based editor with a wide range of nodes to connect and deploy flows.
   short: AI focused application and development environment to create self-trained AI solutions in the Cloud.
@@ -17,17 +17,18 @@ globals:
   wsPort: 1880
   redirPort: 7654
 
-onBeforeInit: scripts/onBeforeInit.js
+#onBeforeInit: scripts/onBeforeInit.js
 
 nodes:
 - nodeType: nginx
   cloudlets: 8
   nodeGroup: bl
   fixedCloudlets: 1
-- nodeType: mongodb-dockerized
+- nodeType: mongodb
   count: 1
   cloudlets: 10
   fixedCloudlets: 1
+  nodeGroup: nosqldb
   password: ${globals.mongodb_password}
 - cloudlets: 8
   fixedCloudlets: 1
@@ -35,7 +36,8 @@ nodes:
   image: nodered/node-red
   nodeGroup: cp
   env:
-    JELASTIC_EXPOSE: '7654'
+    nodeUrl: "http://${env.domain}"
+    nodeUrlS: "https://${env.domain}"
 - nodeType: dockerengine
   count: 1
   cloudlets: 24
@@ -67,11 +69,18 @@ onInstall:
 
 success: |
    Start building your AI solutions just now - click Open in Browser for the dedicated web-based editor launch.  
+     
    Node-red editor credentials:  
+   Admin Panel: **https://${env.domain}**  
    username: **admin**  
    password: **ravabot2pwd**  
+   Use env name **nodeUrl** for internal requests  
+   Use env name **nodeUrlS** for exnternal requests  
    Do not forget to change password after installation with command **node-red admin hash-pw** and update **/data/settings.js**  
+     
    MongoDB credentials:  
+   DB Connection: **${nodes.nosqldb.intIP}:27017**   
    username: **admin**  
    password: **${globals.mongodb_password}**  
-   Vector database connection: **${nodes.vectordb.intIP}:8000**  
+     
+   Vector DB connection: **${nodes.vectordb.intIP}:8000**  

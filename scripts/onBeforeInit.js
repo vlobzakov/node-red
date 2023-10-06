@@ -14,7 +14,7 @@ for (var i = 0, n = q.length; i < n; i++) {
     }
 }
 
-resp = { result: 0, settings: {fields: []} };
+resp = { result: 0, settings: {fields: ["type": "string","name":"nodered_password","caption": "Node-Red Password"]} };
 
 if (endpoint_markup){
     resp.settings.fields.push(

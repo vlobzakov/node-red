@@ -22,10 +22,10 @@ if (endpoint_markup){
         {"type": "displayfield", "cls": "warning", "height": 30, "hideLabel": true, "markup": endpoint_markup},
         {"type": "compositefield","height": 0,"hideLabel": true,"width": 0,"items": [{"height": 0,"type": "string","required": true}]}
     )
-} else {
+} 
     resp.settings.fields.push(
         {"type": "string", "name":"nodered_password", "caption": "Node-Red Password"}
         )
-        }
+  
 
 return resp;

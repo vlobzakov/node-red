@@ -36,12 +36,12 @@ nodes:
   nodeGroup: cp
   env:
     JELASTIC_EXPOSE: '7654'
-#- nodeType: dockerengine
-#  count: 1
-#  cloudlets: 24
-#  fixedCloudlets: 1
-#  displayName: ChromaDB
-#  nodeGroup: vectordb
+- nodeType: dockerengine
+  count: 1
+  cloudlets: 24
+  fixedCloudlets: 1
+  displayName: ChromaDB
+  nodeGroup: vectordb
 
 ssl: true
 
@@ -74,5 +74,4 @@ success: |
    MongoDB credentials:  
    username: **admin**  
    password: **${globals.mongodb_password}**  
-   Vector database connection: use separate ChromaDB node with port **8000**
-#   Vector database connection: **${nodes.vectordb.intIP}:8000**
+   Vector database connection: **${nodes.vectordb.intIP}:8000**  

@@ -1,4 +1,4 @@
-![node-red-logo](images/node-red-logo.png)
+![node-red-logo](images/Logo_Ravatar_Black.svg)
  
 # Node-RED Development Environment  
  

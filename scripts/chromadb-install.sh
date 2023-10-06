@@ -1,5 +1,5 @@
-git clone https://github.com/abhitatachar2000/dockerize-chromadb.git
-cd dockerize-chromadb/
+git clone https://github.com/chroma-core/chroma
+cd chroma/
 docker-compose up --build -d
 sleep 10
 docker_id=$(docker ps | grep chroma:latest | awk -F\  '{print $1}')

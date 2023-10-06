@@ -25,6 +25,7 @@ if (endpoint_markup){
 } else {
     resp.settings.fields.push(
         {"type": "string", "name":"nodered_password", "caption": "Node-Red Password"}
+        )
         }
 
 return resp;
